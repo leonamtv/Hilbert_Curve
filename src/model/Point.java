@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  * 
  * @author Leonam Teixeira de Vasconcelos
@@ -82,5 +84,11 @@ public class Point implements Comparable<Point>{
 	@Override
 	public String toString() {
 		return new StringBuilder().append("[x:").append(this.x).append(":y:").append(this.y).append("]").toString();
+	}
+	
+	//HashCode for the point
+	@Override
+	public int hashCode() {
+		return Objects.hash(this.individual_counter);
 	}
 }

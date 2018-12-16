@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  * 
  * @author Leonam Teixeira de Vasconcelos
@@ -71,5 +73,11 @@ public class Square {
 	public boolean equals(Object obj) {
 		Square sq = (Square) obj;
 		return (this.first_point.equals(sq.first_point) && this.second_point.equals(sq.second_point) && this.third_point.equals(sq.third_point) && this.fourth_point.equals(sq.fourth_point));
+	}
+	
+	//HashCode for the Square
+	@Override
+	public int hashCode() {
+		return Objects.hash(this.id);
 	}
 }

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  * 
  * @author Leonam Teixeira de Vasconcelos
@@ -122,5 +124,11 @@ public class Curve implements Comparable<Curve>{
 			return -1;
 		}else
 			return 0;
+	}
+	
+	//HashCode for the Curve
+	@Override
+	public int hashCode() {
+		return Objects.hash(this.id);
 	}
 }
