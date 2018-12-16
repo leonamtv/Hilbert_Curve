@@ -2,7 +2,7 @@ package model;
 
 /**
  * 
- * @author leonamtv
+ * @author Leonam Teixeira de Vasconcelos
  * Class Square: models a square made up by 4 points as shown in diagram below
  *
  */
