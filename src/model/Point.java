@@ -8,7 +8,7 @@ public class Point implements Comparable<Point>{
 	//An individual counter used as an ID
 	public int individual_counter;
 	
-	//A level variable that defines in which level of the Hilbert Curve this point must to be drawn in 
+	//A level variable that defines in which level of the Hilbert Curve this point must be drawn in 
 	public int level;
 	
 	//X and Y coordinates
@@ -74,6 +74,6 @@ public class Point implements Comparable<Point>{
 	//To String for printing the point
 	@Override
 	public String toString() {
-		return new StringBuilder().append("x:").append(this.x).append(":y:").append(this.y).toString();
+		return new StringBuilder().append("[x:").append(this.x).append(":y:").append(this.y).append("]").toString();
 	}
 }
