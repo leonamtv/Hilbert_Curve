@@ -58,4 +58,11 @@ public class Square {
 	public String toString() {
 		return new StringBuilder().append("| ").append(first_point).append(second_point).append(third_point).append(fourth_point).append("center:").append(this.getCenterPoint()).append("length:").append(this.getEdgeLength()).append(" |").toString();
 	}
+	
+	//equals method
+	@Override
+	public boolean equals(Object obj) {
+		Square sq = (Square) obj;
+		return (this.first_point.equals(sq.first_point) && this.second_point.equals(sq.second_point) && this.third_point.equals(sq.third_point) && this.fourth_point.equals(sq.fourth_point));
+	}
 }
