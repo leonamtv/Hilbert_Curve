@@ -1,5 +1,12 @@
 package model;
 
+/**
+ * 
+ * @author Leonam Teixeira de Vasconcelos
+ * Class point: models a point in a 2D plane with two double coordinates: x and y;
+ * 
+ */
+
 public class Point implements Comparable<Point>{
 	
 	//Static counter for sorting

@@ -1,5 +1,12 @@
 package model;
 
+/**
+ * 
+ * @author leonamtv
+ * Class Square: models a square made up by 4 points as shown in diagram below
+ *
+ */
+
 public class Square {
 	
 	//Defining Square id
