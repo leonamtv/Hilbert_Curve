@@ -25,6 +25,6 @@ um StackOverFlow. Testes foram realizados até o nível 10;
 
 The entire process of generating curves is calculated by a recursive function, and the number
 of curves grows exponentialy: each curve generates 4 other curves. Generate curves up to very
-high levels may trigger a StackOverFlow Exception. Tests were realizez up to level 10.
+high levels may trigger a StackOverFlow Exception. Tests were realized up to level 10.
 
 ===============================================================================================
