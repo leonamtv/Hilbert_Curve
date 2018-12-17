@@ -135,32 +135,32 @@ public class Hilbert_Calculation {
         
 		//=================================================================
 		// Adding the center point of each square in the point_list array
-        point_list.add(new Point(0, square_1.getCenterPoint()));
-        point_list.add(new Point(0, square_2.getCenterPoint()));
-        point_list.add(new Point(0, square_3.getCenterPoint()));
-        point_list.add(new Point(0, square_4.getCenterPoint()));
+        	point_list.add(new Point(0, square_1.getCenterPoint()));
+        	point_list.add(new Point(0, square_2.getCenterPoint()));
+        	point_list.add(new Point(0, square_3.getCenterPoint()));
+        	point_list.add(new Point(0, square_4.getCenterPoint()));
 		//=================================================================
         
-        // Defining the values of the first_curve
-        first_curve = new Curve(1, 1, cn, square_1, square_2, square_3, square_4);
+        	// Defining the values of the first_curve
+        	first_curve = new Curve(1, 1, cn, square_1, square_2, square_3, square_4);
         
-        // Adding the initial curve in the curve_list array
-        curve_list.add(first_curve);
+	        // Adding the initial curve in the curve_list array
+	        curve_list.add(first_curve);
         
-        // Call the calculate method passing the initial level and the initial curve
-        calculate(1, first_curve);
+	        // Call the calculate method passing the initial level and the initial curve
+	        calculate(1, first_curve);
         
-        // Sorting curve_list array
-        sort_curves();
+        	// Sorting curve_list array
+        	sort_curves();
 
-        // Sorting point_list array
-        sort_points();
+        	// Sorting point_list array
+        	sort_points();
         
-        // Creating a new DrawingPanel()
-        DrawingPanel dp = new DrawingPanel();
+        	// Creating a new DrawingPanel()
+        	DrawingPanel dp = new DrawingPanel();
 
-        // Initializing new Window in variable w
-        w = new Window(dp);
+       		// Initializing new Window in variable w
+        	w = new Window(dp);
         
 	}
 	
@@ -193,24 +193,24 @@ public class Hilbert_Calculation {
 			// Defines four squares of the first curve using the curve passed in the second argument and a method that
 			// receives two points e returns the medium point of the two.
 			sq_1  = new Square(1, new Point(base_curve.first_square.first_point), 
-								  new Point(medium_point(base_curve.first_square.first_point, base_curve.first_square.second_point)), 
-								  new Point(base_curve.first_square.getCenterPoint()), 
-								  new Point(medium_point(base_curve.first_square.first_point, base_curve.first_square.fourth_point)));
+						new Point(medium_point(base_curve.first_square.first_point, base_curve.first_square.second_point)), 
+						new Point(base_curve.first_square.getCenterPoint()), 
+						new Point(medium_point(base_curve.first_square.first_point, base_curve.first_square.fourth_point)));
 			
-            sq_2  = new Square(2, new Point(medium_point(base_curve.first_square.first_point, base_curve.first_square.second_point)), 
-            		 			  new Point(base_curve.first_square.second_point), 
-            		 			  new Point(medium_point(base_curve.first_square.second_point, base_curve.first_square.third_point)), 
-            		 			  new Point(base_curve.first_square.getCenterPoint()));
+            		sq_2  = new Square(2, new Point(medium_point(base_curve.first_square.first_point, base_curve.first_square.second_point)), 
+            		 			new Point(base_curve.first_square.second_point), 
+            		 			new Point(medium_point(base_curve.first_square.second_point, base_curve.first_square.third_point)), 
+            		 			new Point(base_curve.first_square.getCenterPoint()));
             
-            sq_3  = new Square(3, new Point(base_curve.first_square.getCenterPoint()), 
-            				      new Point(medium_point(base_curve.first_square.second_point, base_curve.first_square.third_point)), 
-            				      new Point(base_curve.first_square.third_point), 
-            				      new Point(medium_point(base_curve.first_square.third_point, base_curve.first_square.fourth_point)));
+            		sq_3  = new Square(3, new Point(base_curve.first_square.getCenterPoint()), 
+					   	new Point(medium_point(base_curve.first_square.second_point, base_curve.first_square.third_point)), 
+            					new Point(base_curve.first_square.third_point), 
+            					new Point(medium_point(base_curve.first_square.third_point, base_curve.first_square.fourth_point)));
             
-            sq_4  = new Square(4, new Point(medium_point(base_curve.first_square.first_point, base_curve.first_square.fourth_point)), 
-            					  new Point(base_curve.first_square.getCenterPoint()), 
-            					  new Point(medium_point(base_curve.first_square.third_point, base_curve.first_square.fourth_point)), 
-            					  new Point(base_curve.first_square.fourth_point));
+            		sq_4  = new Square(4, new Point(medium_point(base_curve.first_square.first_point, base_curve.first_square.fourth_point)), 
+            					new Point(base_curve.first_square.getCenterPoint()), 
+            					new Point(medium_point(base_curve.first_square.third_point, base_curve.first_square.fourth_point)), 
+            					new Point(base_curve.first_square.fourth_point));
 			//==========================================================================================================================
 			//==========================================================================================================================
             
@@ -219,25 +219,25 @@ public class Hilbert_Calculation {
 			//==========================================================================================================================
 			// Defines four squares of the second curve using the curve passed in the second argument and a method that
 			// receives two points e returns the medium point of the two.
-            sq_5  = new Square(1, new Point(base_curve.second_square.first_point), 
-            					  new Point(medium_point(base_curve.second_square.first_point, base_curve.second_square.second_point)), 
-            					  new Point(base_curve.second_square.getCenterPoint()), 
-            					  new Point(medium_point(base_curve.second_square.first_point, base_curve.second_square.fourth_point)));
+           		 sq_5  = new Square(1, new Point(base_curve.second_square.first_point), 
+            					new Point(medium_point(base_curve.second_square.first_point, base_curve.second_square.second_point)), 
+            					new Point(base_curve.second_square.getCenterPoint()), 
+            					new Point(medium_point(base_curve.second_square.first_point, base_curve.second_square.fourth_point)));
             
-            sq_6  = new Square(2, new Point(medium_point(base_curve.second_square.first_point, base_curve.second_square.second_point)), 
-            					  new Point(base_curve.second_square.second_point), 
-            					  new Point(medium_point(base_curve.second_square.second_point, base_curve.second_square.third_point)), 
-            					  new Point(base_curve.second_square.getCenterPoint()));
+           		 sq_6  = new Square(2, new Point(medium_point(base_curve.second_square.first_point, base_curve.second_square.second_point)), 
+            					new Point(base_curve.second_square.second_point), 
+            					new Point(medium_point(base_curve.second_square.second_point, base_curve.second_square.third_point)), 
+            					new Point(base_curve.second_square.getCenterPoint()));
             
-            sq_7  = new Square(3, new Point(base_curve.second_square.getCenterPoint()), 
-            					  new Point(medium_point(base_curve.second_square.second_point, base_curve.second_square.third_point)), 
-            					  new Point(base_curve.second_square.third_point), 
-            					  new Point(medium_point(base_curve.second_square.third_point, base_curve.second_square.fourth_point)));
+            		sq_7  = new Square(3, new Point(base_curve.second_square.getCenterPoint()), 
+            					new Point(medium_point(base_curve.second_square.second_point, base_curve.second_square.third_point)), 
+            					new Point(base_curve.second_square.third_point), 
+            					new Point(medium_point(base_curve.second_square.third_point, base_curve.second_square.fourth_point)));
             
-            sq_8  = new Square(4, new Point(medium_point(base_curve.second_square.first_point, base_curve.second_square.fourth_point)), 
-            				 	  new Point(base_curve.second_square.getCenterPoint()), 
-            				 	  new Point(medium_point(base_curve.second_square.third_point, base_curve.second_square.fourth_point)), 
-            				 	  new Point(base_curve.second_square.fourth_point));
+            		sq_8  = new Square(4, new Point(medium_point(base_curve.second_square.first_point, base_curve.second_square.fourth_point)), 
+            				 	new Point(base_curve.second_square.getCenterPoint()), 
+            				 	new Point(medium_point(base_curve.second_square.third_point, base_curve.second_square.fourth_point)), 
+            				 	new Point(base_curve.second_square.fourth_point));
 			//==========================================================================================================================
 			//==========================================================================================================================
             
@@ -246,59 +246,59 @@ public class Hilbert_Calculation {
 			//==========================================================================================================================
 			// Defines four squares of the third curve using the curve passed in the second argument and a method that
 			// receives two points e returns the medium point of the two.
-            sq_9  = new Square(1, new Point(base_curve.third_square.first_point), 
-            					  new Point(medium_point(base_curve.third_square.first_point, base_curve.third_square.second_point)), 
-            					  new Point(base_curve.third_square.getCenterPoint()), 
-            					  new Point(medium_point(base_curve.third_square.first_point, base_curve.third_square.fourth_point)));
+            		sq_9  = new Square(1, new Point(base_curve.third_square.first_point), 
+            					new Point(medium_point(base_curve.third_square.first_point, base_curve.third_square.second_point)), 
+            					new Point(base_curve.third_square.getCenterPoint()), 
+            					new Point(medium_point(base_curve.third_square.first_point, base_curve.third_square.fourth_point)));
             
-            sq_10 = new Square(2, new Point(medium_point(base_curve.third_square.first_point, base_curve.third_square.second_point)), 
-            					  new Point(base_curve.third_square.second_point), 
-            					  new Point(medium_point(base_curve.third_square.second_point, base_curve.third_square.third_point)), 
-            					  new Point(base_curve.third_square.getCenterPoint()));
+            		sq_10 = new Square(2, new Point(medium_point(base_curve.third_square.first_point, base_curve.third_square.second_point)), 
+            					new Point(base_curve.third_square.second_point), 
+            					new Point(medium_point(base_curve.third_square.second_point, base_curve.third_square.third_point)), 
+            					new Point(base_curve.third_square.getCenterPoint()));
             
-            sq_11 = new Square(3, new Point(base_curve.third_square.getCenterPoint()), 
-            					  new Point(medium_point(base_curve.third_square.second_point, base_curve.third_square.third_point)), 
-            					  new Point(base_curve.third_square.third_point), 
-            					  new Point(medium_point(base_curve.third_square.third_point, base_curve.third_square.fourth_point)));
+            		sq_11 = new Square(3, new Point(base_curve.third_square.getCenterPoint()), 
+            					new Point(medium_point(base_curve.third_square.second_point, base_curve.third_square.third_point)), 
+            					new Point(base_curve.third_square.third_point), 
+            					new Point(medium_point(base_curve.third_square.third_point, base_curve.third_square.fourth_point)));
             
-            sq_12 = new Square(4, new Point(medium_point(base_curve.third_square.first_point, base_curve.third_square.fourth_point)), 
-            				 	  new Point(base_curve.third_square.getCenterPoint()), 
-            				 	  new Point(medium_point(base_curve.third_square.third_point, base_curve.third_square.fourth_point)), 
-            				 	  new Point(base_curve.third_square.fourth_point));
+            		sq_12 = new Square(4, new Point(medium_point(base_curve.third_square.first_point, base_curve.third_square.fourth_point)), 
+            				 	new Point(base_curve.third_square.getCenterPoint()), 
+            				 	new Point(medium_point(base_curve.third_square.third_point, base_curve.third_square.fourth_point)), 
+            				 	new Point(base_curve.third_square.fourth_point));
 			//==========================================================================================================================
 			//==========================================================================================================================
             
             
 			//==========================================================================================================================
 			//==========================================================================================================================
-            // Defines four squares of the fourth curve using the curve passed in the second argument and a method that
+           		// Defines four squares of the fourth curve using the curve passed in the second argument and a method that
 			// receives two points e returns the medium point of the two.
-            sq_13 = new Square(1, new Point(base_curve.fourth_square.first_point), 
-            					  new Point(medium_point(base_curve.fourth_square.first_point, base_curve.fourth_square.second_point)), 
-            					  new Point(base_curve.fourth_square.getCenterPoint()), 
-            					  new Point(medium_point(base_curve.fourth_square.first_point, base_curve.fourth_square.fourth_point)));
+            		sq_13 = new Square(1, new Point(base_curve.fourth_square.first_point), 
+            					new Point(medium_point(base_curve.fourth_square.first_point, base_curve.fourth_square.second_point)), 
+            					new Point(base_curve.fourth_square.getCenterPoint()), 
+            					new Point(medium_point(base_curve.fourth_square.first_point, base_curve.fourth_square.fourth_point)));
             
-            sq_14 = new Square(2, new Point(medium_point(base_curve.fourth_square.first_point, base_curve.fourth_square.second_point)), 
-            					  new Point(base_curve.fourth_square.second_point), 
-            					  new Point(medium_point(base_curve.fourth_square.second_point, base_curve.fourth_square.third_point)), 
-            					  new Point(base_curve.fourth_square.getCenterPoint()));
+            		sq_14 = new Square(2, new Point(medium_point(base_curve.fourth_square.first_point, base_curve.fourth_square.second_point)), 
+            					new Point(base_curve.fourth_square.second_point), 
+            					new Point(medium_point(base_curve.fourth_square.second_point, base_curve.fourth_square.third_point)), 
+            					new Point(base_curve.fourth_square.getCenterPoint()));
             
-            sq_15 = new Square(3, new Point(base_curve.fourth_square.getCenterPoint()), 
-            					  new Point(medium_point(base_curve.fourth_square.second_point, base_curve.fourth_square.third_point)), 
-            					  new Point(base_curve.fourth_square.third_point), 
-            					  new Point(medium_point(base_curve.fourth_square.third_point, base_curve.fourth_square.fourth_point)));
+            		sq_15 = new Square(3, new Point(base_curve.fourth_square.getCenterPoint()), 
+            					new Point(medium_point(base_curve.fourth_square.second_point, base_curve.fourth_square.third_point)), 
+            					new Point(base_curve.fourth_square.third_point), 
+            					new Point(medium_point(base_curve.fourth_square.third_point, base_curve.fourth_square.fourth_point)));
             
-            sq_16 = new Square(4, new Point(medium_point(base_curve.fourth_square.first_point, base_curve.fourth_square.fourth_point)), 
-            					  new Point(base_curve.fourth_square.getCenterPoint()), 
-            					  new Point(medium_point(base_curve.fourth_square.third_point, base_curve.fourth_square.fourth_point)), 
-            					  new Point(base_curve.fourth_square.fourth_point));
+            		sq_16 = new Square(4, new Point(medium_point(base_curve.fourth_square.first_point, base_curve.fourth_square.fourth_point)), 
+            					new Point(base_curve.fourth_square.getCenterPoint()), 
+            					new Point(medium_point(base_curve.fourth_square.third_point, base_curve.fourth_square.fourth_point)), 
+            					new Point(base_curve.fourth_square.fourth_point));
 			//==========================================================================================================================
 			//==========================================================================================================================
             
             
 			//================================================================================================================
 			//================================================================================================================
-            // This switch case defines the code of each of the four curves based on the initial curve of the second argument
+            		// This switch case defines the code of each of the four curves based on the initial curve of the second argument
 			switch(base_curve.code) {
 				case 1:
 					code_first_curve  = 2;
