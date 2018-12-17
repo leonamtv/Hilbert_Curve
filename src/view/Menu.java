@@ -26,96 +26,96 @@ public class Menu extends JFrame{
 	
 	// ==========================================
 	// Declaring components
-    private JPanel mainPanel = new JPanel();
-    private JPanel buttonP   = new JPanel();
-    private JTextField tf    = new JTextField();
-    private JButton jb_c     = new JButton();
-    private JButton jb_r     = new JButton();
-    private JButton jb_rp    = new JButton();
+    	private JPanel mainPanel = new JPanel();
+    	private JPanel buttonP   = new JPanel();
+    	private JTextField tf    = new JTextField();
+    	private JButton jb_c     = new JButton();
+    	private JButton jb_r     = new JButton();
+    	private JButton jb_rp    = new JButton();
 	// ==========================================
     
     
 	// =============================================================================    
 	// =============================================================================
-    // Constructor
-    public Menu() throws HeadlessException{
+    	// Constructor
+    	public Menu() throws HeadlessException{
     	
-    	// ====================================================================
-    	// Defining components
-        this.setTitle("Inital menu");
+    		// ====================================================================
+    		// Defining components
+        	this.setTitle("Inital menu");
         
-        this.setSize(400,95);
+	        this.setSize(400,95);
+	        
+        	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	        this.setLocationRelativeTo(null);
         
-        this.setLocationRelativeTo(null);
+	        this.mainPanel.setLayout(new BorderLayout());
         
-        this.mainPanel.setLayout(new BorderLayout());
+        	this.buttonP.setLayout(new BorderLayout());
         
-        this.buttonP.setLayout(new BorderLayout());
+        	this.jb_c.setText("Calculate");
         
-        this.jb_c.setText("Calculate");
+	        this.jb_r.setText("Render");
         
-        this.jb_r.setText("Render");
+        	this.jb_rp.setText("Render and Print");
         
-        this.jb_rp.setText("Render and Print");
+        	this.jb_r.setEnabled(false);
         
-        this.jb_r.setEnabled(false);
+        	this.jb_rp.setEnabled(false);
+    		// ====================================================================
         
-        this.jb_rp.setEnabled(false);
-    	// ====================================================================
+        	// ====================================================================
+        	// Setting listener for the button
+        	this.jb_c.addActionListener(new ActionListener(){
         
-        // ====================================================================
-        // Setting listener for the button
-        this.jb_c.addActionListener(new ActionListener(){
-        
-        @Override
-        public void actionPerformed(ActionEvent arg0){
-                
-        	if(tf.getText().equals("")){
+        		@Override
+        		public void actionPerformed(ActionEvent arg0){
+	                
+        			if(tf.getText().equals("")){
                     
-               	JOptionPane.showMessageDialog(null, "Campo em branco");
-                
-            }else{
+			               	JOptionPane.showMessageDialog(null, "Campo em branco");
+	                
+        			}else{
                     
-               	int lev = Integer.parseInt(tf.getText());
+	               			int lev = Integer.parseInt(tf.getText());
                     
-                level = lev;
+                			level = lev;
                     
-                 jb_r.setEnabled(true);
-                 jb_rp.setEnabled(true);
+                 			jb_r.setEnabled(true);
+                 			jb_rp.setEnabled(true);
                    
-                 jb_r.addActionListener(new ActionListener(){
-                 @Override
-                 public void actionPerformed(ActionEvent e) {
-                	 Hilbert_Calculation c = new Hilbert_Calculation();
-                     	c.start(level, false);
-                     }
-                 });
+                 			jb_r.addActionListener(new ActionListener(){
+                 				@Override
+                 				public void actionPerformed(ActionEvent e) {
+                	 				Hilbert_Calculation c = new Hilbert_Calculation();
+                     					c.start(level, false);
+                     				}
+                 			});
         
-                 jb_rp.addActionListener(new ActionListener(){
-                      @Override
-                      public void actionPerformed(ActionEvent e) {
-                    	  Hilbert_Calculation c = new Hilbert_Calculation();
-                          c.start(level, true);
-                      }
-                 });
-             }
-        }
-        });
-        // ====================================================================
+                 			jb_rp.addActionListener(new ActionListener(){
+                      				@Override
+                      				public void actionPerformed(ActionEvent e) {
+                    	  				Hilbert_Calculation c = new Hilbert_Calculation();
+                          				c.start(level, true);
+                      				}
+                 			});
+             			}
+        		}
+        	});
+        	// ====================================================================
         
-        // ===============================================================
-        // Adding components to the frame
-        this.buttonP.add(jb_r, BorderLayout.WEST);
-        this.buttonP.add(jb_rp, BorderLayout.CENTER);
-        this.mainPanel.add(tf, BorderLayout.CENTER);
-        this.mainPanel.add(jb_c, BorderLayout.EAST);
-        this.mainPanel.add(buttonP, BorderLayout.SOUTH);
+        	// ===============================================================
+        	// Adding components to the frame
+        	this.buttonP.add(jb_r, BorderLayout.WEST);
+        	this.buttonP.add(jb_rp, BorderLayout.CENTER);
+        	this.mainPanel.add(tf, BorderLayout.CENTER);
+        	this.mainPanel.add(jb_c, BorderLayout.EAST);
+        	this.mainPanel.add(buttonP, BorderLayout.SOUTH);
         
-        this.getContentPane().add(mainPanel, BorderLayout.CENTER);
-        // ===============================================================
-    }
-	// =============================================================================    
-	// =============================================================================
+        	this.getContentPane().add(mainPanel, BorderLayout.CENTER);
+        	// ===============================================================
+    	}
+    	// =============================================================================    
+    	// =============================================================================
 }
