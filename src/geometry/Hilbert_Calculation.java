@@ -104,9 +104,9 @@ public class Hilbert_Calculation {
 		//=========================================================================================
 		// Defines the first square in function of the initial coordintes and the initial point
 		square_1 = new Square(new Point(base_point.x - base_y, base_point.y + base_y), 
-				   			  new Point(base_point.x - base_y, base_point.y), 
-				   			  new Point(base_point), 
-				   			  new Point(base_point.x, base_point.y + base_y));
+				   		  new Point(base_point.x - base_y, base_point.y), 
+				   		  new Point(base_point), 
+				   		  new Point(base_point.x, base_point.y + base_y));
 		//=========================================================================================
 		
 		//=========================================================================================
