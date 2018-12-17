@@ -1,5 +1,9 @@
 package view;
 
+/**
+ * @author Leonam Teixeira de Vasconcelos
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
@@ -11,7 +15,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import geometry.Hilbert_Calculation;
 
 @SuppressWarnings("unused")
@@ -21,15 +24,24 @@ public class Menu extends JFrame{
 
 	public static int level;
 	
+	// ==========================================
+	// Declaring components
     private JPanel mainPanel = new JPanel();
     private JPanel buttonP   = new JPanel();
     private JTextField tf    = new JTextField();
     private JButton jb_c     = new JButton();
     private JButton jb_r     = new JButton();
     private JButton jb_rp    = new JButton();
+	// ==========================================
     
+    
+	// =============================================================================    
+	// =============================================================================
+    // Constructor
     public Menu() throws HeadlessException{
     	
+    	// ====================================================================
+    	// Defining components
         this.setTitle("Inital menu");
         
         this.setSize(400,95);
@@ -51,7 +63,10 @@ public class Menu extends JFrame{
         this.jb_r.setEnabled(false);
         
         this.jb_rp.setEnabled(false);
+    	// ====================================================================
         
+        // ====================================================================
+        // Setting listener for the button
         this.jb_c.addActionListener(new ActionListener(){
         
         @Override
@@ -88,7 +103,10 @@ public class Menu extends JFrame{
              }
         }
         });
+        // ====================================================================
         
+        // ===============================================================
+        // Adding components to the frame
         this.buttonP.add(jb_r, BorderLayout.WEST);
         this.buttonP.add(jb_rp, BorderLayout.CENTER);
         this.mainPanel.add(tf, BorderLayout.CENTER);
@@ -96,5 +114,8 @@ public class Menu extends JFrame{
         this.mainPanel.add(buttonP, BorderLayout.SOUTH);
         
         this.getContentPane().add(mainPanel, BorderLayout.CENTER);
+        // ===============================================================
     }
+	// =============================================================================    
+	// =============================================================================
 }

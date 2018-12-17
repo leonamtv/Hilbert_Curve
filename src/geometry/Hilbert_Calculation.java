@@ -10,7 +10,6 @@ package geometry;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Collections;
-
 import model.Curve;
 import model.Square;
 import view.DrawingPanel;
@@ -87,7 +86,7 @@ public class Hilbert_Calculation {
 		 *  just fine in the tests;
 		 */
 		double base_x = 0.500 * SCREEN_WIDTH;
-		double base_y = 0.415 * SCREEN_HEIGHT;
+		double base_y = 0.400 * SCREEN_HEIGHT;
 		//=========================================================================
 		
 		// Defining a point with the initial coordinates.
