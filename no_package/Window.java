@@ -1,5 +1,3 @@
-package view;
-
 /**
  *	@author Leonam Teixeira de Vasconcelos 
  */

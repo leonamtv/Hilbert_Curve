@@ -1,5 +1,3 @@
-package geometry;
-
 /**
  * @author Leonam Teixeira de Vasconcelos
  * Class Hilbert_Calculation: does all the math for the points, squares
